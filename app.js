@@ -2,6 +2,7 @@ const express = require("express"); // * Import express
 const bodyParser = require("body-parser"); // * bodyparser to parse the body of POST/PUT
 const cors = require("cors"); // * used to deal with CORS
 const app = express(); // * Create express instance
+const _ = require("lodash");
 const port = 4000; // * specify PORT
 
 // * Our user, in a real API those would come from a database (mongoDB, mySQL etc)
@@ -111,6 +112,18 @@ app.delete("/", (req, res) =>
   // * 405: Method not allowed
   res.status(405).json({ error: "this route doesnt allow delete" })
 );
+
+app.get("/balances", (req, res) => {
+  let { query } = req;
+  let sortedUsers = users;
+  console.log("query", query);
+  if (query.sort === "asc") {
+    sortedUsers = _.sortBy(users, o => o.balance);
+  } else if (query.sort === "desc") {
+    sortedUsers = _.sortBy(users, o => o.balance).reverse();
+  }
+  res.status(200).send(sortedUsers);
+});
 
 // * Start server with callback once server is ready
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

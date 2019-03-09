@@ -125,5 +125,10 @@ app.get("/balances", (req, res) => {
   res.status(200).send(sortedUsers);
 });
 
+// * Fallback route is no other route matches
+app.get("*", function(req, res) {
+  res.send("what???", 404);
+});
+
 // * Start server with callback once server is ready
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

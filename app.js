@@ -53,10 +53,10 @@ app.get("/", (req, res) => res.send("Everything OK"));
 app.all(/user/, (req, res, next) => {
   let auth = req.headers.authorization;
   // * Check authorization to make sure that only authorized users get access
-  if (notAuthorized) {
-    // * Reject request
-    res.status(401);
-  }
+  // if (notAuthorized) {
+  //   // * Reject request
+  //   res.status(401);
+  // }
   next();
 });
 
@@ -81,7 +81,7 @@ app.post("/user", (req, res) => {
   let { name, balance } = req.body;
   if (name && balance) {
     // * Add new user to users, in real life you would have a write operation to a database
-    users.push({ name, balance });
+    users.push({ name, balance: parseFloat(balance) });
     console.log("users", users);
     // * return all users and status 200
     res.status(200).send(users);
@@ -94,7 +94,8 @@ app.post("/user", (req, res) => {
 // * PUT, change balance on existing user
 app.put("/user/:id", (req, res) => {
   let { balance } = req.body;
-  users[req.params.id].balance = balance;
+  console.log("balance", balance);
+  users[req.params.id].balance = parseFloat(balance); // * comes as a string
   // * return existing user with new balance, would need update operation to a database
   res.status(200).send(users[req.params.id]);
 });

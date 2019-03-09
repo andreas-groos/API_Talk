@@ -1,5 +1,6 @@
 const express = require("express"); // * Import express
 const bodyParser = require("body-parser"); // * bodyparser to parse the body of POST/PUT
+const cors = require("cors"); // * used to deal with CORS
 const app = express(); // * Create express instance
 const port = 4000; // * specify PORT
 
@@ -30,6 +31,13 @@ app.use(bodyParser.json());
 
 // * urlencoded({extended: true}) let's us use the body, otherwise we would have to use querystring
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// * implement CORS
+app.use(cors()); // * allow requests to originate from anywhere
+// * restrict access to only come from a certain origin
+// app.use(cors({
+//   origin: 'http://yourapp.com'
+// }));
 
 // * matches every route, every method
 app.all("*", (req, res, next) => {

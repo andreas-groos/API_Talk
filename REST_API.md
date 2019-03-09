@@ -1,13 +1,16 @@
 # `REST_APIs`
 
-**Warning:** Things are simplified for brevity and lack of detailed knowledge!
+
+![usethe](_v_images/_usethe_1552110367_1100147158.png)
+
+**Warning:** Things are simplified for brevity.
 
 ## Aim of this talk:
 
-Introduce you to the concepts of
+Introduce you to the concepts of 
 
 - APIs
-- Basic of REST
+- Basics of REST
 - HTTP-Requests including GET,POST,PUT, DELETE
 - Headers, body, routes, params, queries etc
 - Tools like Postman
@@ -55,9 +58,9 @@ The query string starts with an `?`, parameters are usually key value pairs, mul
 
 ### HTTP METHODS:
 
-There are basically 4 HTTP methods, sometime called verbs:
+There are basically 4 HTTP  methods, sometime called verbs:
 
-`GET`,`POST`, `PUT`,`DELETE`.
+`GET`,`POST`, `PUT`,`DELETE`. 
 
 `GET` is used to purely request information, `POST` is used to create something, `PUT` is used to modify something, `DELETE` is used to delete something. They respond loosly to database operations but are not directly coupled.
 
@@ -73,6 +76,39 @@ Every request returns a status code from 100 to 599:
 `500`: Internal Server Error
 and many more
 
+### Headers:
+
+> HTTP headers provide vital information required for a HTTP transaction send via http protocol. The general HTTP header format contains colon-separated name - value pairs in the header field. Each of the name-value pair end with a carriage return (CR) and a line feed (LF) character sequence.
+
+Often used to add authorization etc.
+
+## Postman:
+
+GUI tool to let us test our API, allows for saving requests and so much more.
+
+## Cloud services like AWS Amplify API:
+
+Allows use to create APIs in the cloud that scale and come with a lot of features with just a few CLI commands. Tightly coupled with other AWS services, like authorization, `DynamoDB` etc.
+
+## Deploy APIs:
+
+Usually I run them in a Digital Ocean droplet, in production behind an `nginx` server and a firewall.
+
+## The Future of APIs:
+
+REST APIs are old in terms of web development and there are new solutions to make data accessible. But classic REST APIs will be around in the future.
+One criticism is that a big monolithic REST API is difficult to change and to extend and rigid in terms of what data it returns. Also, in case you need certain data there might be multiple requests that have to happen in succession, which takes time. 
+
+Newer patterns that are available are microservices and `graphql` which is much more flexible in what data it returns and in terms of routing.
+
+![You get an API](_v_images/_yougetanap_1552109828_555096383.png)
+
 ## Building our API:
 
-We'll be using `express` the most popular web application framework for `node`. It's possible to write everything in plain `node` but `express` will help us a lot. Alternatives to `express` are 'koa`and`hapi`for`node` but you can do the same functionality in other programming languages.
+We'll be using `express` the most popular web application framework for `node`. It's possible to write everything in plain `node` but `express` will help us a lot. Alternatives to `express` are `koa` and `hapi` for `node` but you can do the same functionality obviously in other programming languages.
+
+
+
+
+
+

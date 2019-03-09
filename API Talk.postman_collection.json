@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "17c1d1d4-3b47-4a80-b8ab-0cdec31556cb",
+		"name": "API Talk",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:4000",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:4000",
+					"host": [
+						"localhost"
+					],
+					"port": "4000"
+				},
+				"description": "GET root /"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:4000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users"
+					]
+				},
+				"description": "GET All Users\n"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/user/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:4000/user/1",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"user",
+						"1"
+					]
+				},
+				"description": "GET Indiviudal User"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "New User",
+							"type": "text"
+						},
+						{
+							"key": "balance",
+							"value": "500",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4000/user",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"user"
+					]
+				},
+				"description": "POST new user"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/user/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "balance",
+							"value": "233",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4000/user/1",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"user",
+						"1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				},
+				"description": "PUT user/:id change balance"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/user/0",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:4000/user/0",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"user",
+						"0"
+					]
+				},
+				"description": "DELETE user"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:4000/",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						""
+					]
+				},
+				"description": "DELETE /, not allowed"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/balances",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:4000/balances",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"balances"
+					]
+				},
+				"description": "GET /balances"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/balances?sort=asc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:4000/balances?sort=asc",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"balances"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "asc"
+						}
+					]
+				},
+				"description": "GET /balances with sort query"
+			},
+			"response": []
+		}
+	]
+}

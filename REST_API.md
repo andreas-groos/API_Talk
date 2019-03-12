@@ -30,6 +30,12 @@ Getting data from your own or another service, i.e github, weather, geocoding, s
 
 [https://api.coindesk.com/v1/bpi/currentprice.json ](https://api.coindesk.com/v1/bpi/currentprice.json)
 
+Use it for 'headless' WP:
+
+[https://css-tricks.com/wp-json/wp/v2](https://css-tricks.com/wp-json/wp/v2)
+
+[https://css-tricks.com/wp-json/wp/v2/posts](https://css-tricks.com/wp-json/wp/v2/posts)
+
 ### Documentation of an API:
 
 All APIs should have some documentation to explain their structure and operations.
@@ -100,6 +106,8 @@ REST APIs are old in terms of web development and there are new solutions to mak
 One criticism is that a big monolithic REST API is difficult to change and to extend and rigid in terms of what data it returns. Also, in case you need certain data there might be multiple requests that have to happen in succession, which takes time. 
 
 Newer patterns that are available are microservices and `graphql` which is much more flexible in what data it returns and in terms of routing.
+
+[Example of GraphQL query](https://countries.trevorblades.com/)
 
 ![You get an API](_v_images/_yougetanap_1552109828_555096383.png)
 
